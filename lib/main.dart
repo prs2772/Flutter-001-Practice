@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:paris_trips/description_place.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,40 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return _secondChallenge(context);
+    //return _secondChallenge(context);
+    return _exerciseOne(context);
+  }
+  Widget _exerciseOne(BuildContext context){
+    String namePlace = 'Xcaret';
+    int stars = 5;
+    String descriptionPlace = 'Xcaret is the park in Cancun where you will experience Mexico in more than 50 attractions for the whole family. Swim in underground rivers that are born from the heart of the earth. Get a close look at the inhabitants of the Aviary, the Coral Reef Aquarium and the Butterfly Garden. Eat delicious typical and international dishes. Get to know Mayan archaeological vestiges and get excited with the presentation of Xcaret México.';
+
+    return MaterialApp(
+      title: 'First execise',
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
+            onPressed: ()=>Navigator.of(context).pop(),
+          ),
+          title: Text(namePlace),
+          centerTitle: false,
+        ),
+        body: DescriptionPlace(namePlace,stars, descriptionPlace),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(
+              Icons.add
+          ),
+          onPressed: ()=>{},
+        ),
+      ),
+    );
   }
   Widget _secondChallenge(BuildContext context){
     return MaterialApp(
