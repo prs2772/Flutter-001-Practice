@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:paris_trips/description_place.dart';
+import 'package:paris_trips/AppContent/description_place.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +15,11 @@ class MyApp extends StatelessWidget {
     //return _secondChallenge(context);
     return _exerciseOne(context);
   }
+
+
+
+
+
   Widget _exerciseOne(BuildContext context){
     String namePlace = 'Xcaret';
     int stars = 5;
@@ -47,6 +52,13 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
+
+
+
+
+
+
   Widget _secondChallenge(BuildContext context){
     return MaterialApp(
         title: 'Second challenge',

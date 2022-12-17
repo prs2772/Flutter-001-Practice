@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import '../Utilities/Ratings/rating_stars.dart';
+import '../Utilities/Ratings/star.dart';
+
 class DescriptionPlace extends StatelessWidget{
   String namePlace;
   int stars;
@@ -16,7 +19,8 @@ class DescriptionPlace extends StatelessWidget{
         right: 50.0,
         left: 27.0,
       ),
-      child: Text(descriptionPlace,
+      child: Text(
+        descriptionPlace,
         textAlign: TextAlign.justify,
         style: const TextStyle(
           fontSize: 16.0,
@@ -50,22 +54,31 @@ class DescriptionPlace extends StatelessWidget{
               child: Text(
                 namePlace,
                 style: const TextStyle(
+                  fontFamily: "LatoRegular",
                   fontSize: 30.0,
                   fontWeight: FontWeight.w900,
                 ),
                 textAlign: TextAlign.left,
               ),
             ),
-            Row(
+            RatingStar(<Star>[
+              Star(StarStatus.filled),
+              Star(StarStatus.filled),
+              Star(StarStatus.filled),
+              Star(StarStatus.half),
+              Star(StarStatus.empty),
+            ]
+            )
+            /*Row(
               children: <Widget>[
-                star(1),
                 star(1),
                 star(1),
                 star(1),
                 star(1),
                 star(2),
               ],
-            ),
+            ),*/
+
           ],
         ),
         description,
